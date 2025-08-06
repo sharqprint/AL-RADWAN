@@ -1,0 +1,236 @@
+:root {
+    --primary-bg: #d4b864;
+    --button-color: #c1a04a;
+    --text-dark: #333;
+    --white: #fff;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+header {
+    background: #b89d40;
+    padding: 15px 5%;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: fadeInDown 1s ease;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)) brightness(1); }
+    to { filter: drop-shadow(0 6px 16px rgba(255,255,180,0.5)) brightness(1.1); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    padding: 60px 5%;
+    max-width: 1400px;
+    margin: auto;
+    direction: rtl;
+}
+
+h2, h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #444;
+    position: relative;
+}
+
+h2::after, h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--button-color);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    animation: slideInUp 1s ease;
+}
+
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.whatsapp-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #25D366;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-decoration: none;
+    min-width: 220px;
+    justify-content: center;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn i {
+    font-size: 1.5rem;
+}
+
+.maps-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transform: translateY(0);
+    transition: var(--transition);
+}
+
+.map-container:hover {
+    transform: translateY(-10px);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 20px;
+}
+
+.map-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #444;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #b89d40;
+    color: white;
+    margin-top: 60px;
+    font-size: 1.1rem;
+}
+
+.contact-info {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.phone-span {
+    cursor: pointer;
+    color: #fff;
+    text-decoration: underline;
+    transition: var(--transition);
+}
+
+.phone-span:hover {
+    color: #f0e68c;
+}
+
+.design-credit {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.design-credit a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.design-credit a:hover {
+    text-decoration: underline;
+}
+
+.copy-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        height: 60px;
+    }
+    h2, h3 {
+        font-size: 1.6rem;
+    }
+    .about-text {
+        font-size: 1.1rem;
+        padding: 20px;
+    }
+    .whatsapp-btn {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
